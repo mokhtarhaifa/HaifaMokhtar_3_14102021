@@ -1,0 +1,34 @@
+@mixin logosize{
+    width: 40%;
+}
+@mixin fonttext {
+    font-family:  Roboto, sans-serif;
+}
+@mixin fonttitle {
+    font-family:   Shrikhand, sans-serif;
+}
+   
+@mixin btn($raduis,$espace,$couleur,$bgcolor,$size,$ftweight){
+    border-radius: $raduis;
+    padding:$espace;
+    color: $couleur;
+    background: $bgcolor;
+    font-size:$size;
+    font-weight:$ftweight;
+    border: none;
+    box-shadow: $shadow;
+    text-decoration: none;
+    
+}
+@mixin btnfunction($largeur,$hauteur) {
+    width: $largeur;
+    height: $hauteur;
+    
+}
+@mixin cardmenu {
+    margin-left: 15px;
+    background-color:white;
+    width:90%;
+    height: auto;
+    border-radius: 20px;
+}
