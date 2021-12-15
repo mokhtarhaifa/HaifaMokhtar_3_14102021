@@ -54,6 +54,7 @@ body{
         p{
             @extend .headerproperty;
             font-size: 20px;
+            color: darken($colorgray,70);
         }
         &button{
             @include btn(30px,20px,#fff,linear-gradient((map-get($color,Secondaire)), (map-get($color,Primaire))),17px,bold);
@@ -61,7 +62,7 @@ body{
             
         }
         a:hover{
-            color:(map-get($color,noir));
+            color:map-get($color,noir);
         }
     }
 }
@@ -89,18 +90,22 @@ main{
         @include btnfunction(80%,50px);
         align-items: center;
         margin-bottom: 20px;
+        
+        
         &:hover{
             background:lighten((map-get($color, Primaire)),30);
-            
-        }
-        &:hover .stepicon{
+            .stepicon{
             color:map-get($color, Primaire) ;
+            }
         }
+        
+
         &number{
             @include btn(50%,3px,#fff,map-get($color,Primaire),15px,lighter);
-            @include btnfunction(20px,20px);
+            @include btnfunction(20px,19px);
             text-align: center;
             margin-left: -20px;
+            
         }
         &text{
             margin-left: 20px;
@@ -122,23 +127,37 @@ main{
             text-decoration: none;
             color: map-get($color, noir);
             margin-bottom: 30px;
+            height: 255px;
             &_image{
                 border-top-left-radius: 20px;
                 border-top-right-radius: 20px;
                 height: 180px;
                 object-fit: fill;
+                width: 100%;
             } 
+            &_badge{
+                position: absolute;
+                background-color: map-get($color, Tertiaire);
+                color: darken(map-get($color, Tertiaire),40) ;
+                right:35px;
+                margin-top: 20px;
+                padding: 7px 15px;
+                font-size: 18px;
+                border-radius: 5px;
+            }
+            h3{
+                margin: 0px;
+                margin-top: 8px;
+            }
             &_description{
                 line-height: 10px;
-                padding:15px;
+                padding:12px 20px;
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
-                padding-bottom: 0px;
+                justify-content: space-between;  
             }
-        .heart{
-            font-size: 25px;
-        }
+            
+        
         } 
     }
 }
@@ -152,17 +171,18 @@ footer{
         color: white;
         @include fonttitle;
     }
-    ol{
+    ul{
         margin-top: 5px;
     }
-    ol li{
-        
+    ul li{
         list-style: none;
-        color: white;
         margin-bottom: 10px;
-        
+        .footer_link{
+            text-decoration: none;
+            color: white;
+        } 
     }
     .footer_icon{
         padding-right:7px;
-    }
+    } 
 }
