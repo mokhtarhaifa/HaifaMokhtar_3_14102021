@@ -59,7 +59,6 @@ body{
         &button{
             @include btn(30px,20px,#fff,linear-gradient((map-get($color,Secondaire)), (map-get($color,Primaire))),17px,bold);
             margin-top: 15px;
-            
         }
         a:hover{
             color:map-get($color,noir);
@@ -192,64 +191,90 @@ footer{
         display: flex;
         flex-direction:row;
         align-items: center;
-        justify-content: center;
         margin-top:5px;
-    h1{
-        @include fonttitle;
-        margin: 0;
-        padding-right: 50px;
-        
-    }
-    .fas{
-        padding-right: 70px;
-    }
+        margin-left: 30px;
+        h1{
+            @include fonttitle;
+            margin: 0;
+            padding-left: 80px;
+        }
+        a{
+            color: black;
+        }
     }  
 }
 
 .menu{
-    
     &-img{
         object-fit: fill;
         width: 100%;
     }
-    &-list{
+    &-card{
         @extend .flexprprety;
+        padding:12px;
         background-color:$colorgray ;
         margin-top: -50px;
         border-top-left-radius: 50px;
         border-top-right-radius: 50px;
-        padding:0px 20px;
+    
         &_title{
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
             align-items: center;
-            margin-top: 25px;
+            justify-content: space-between;
+            margin-top: 35px;
             h2{
                 @include fonttitle;
                 margin:0;
+                padding-right: 35px;
+            }
+            .far{
+                padding-right: 25px;
             }
         }
-        &_card{
-        @extend .flexprprety;
-        @include btn(15px,10px,map-get($color,noir),$colorgray,16px,bold);
-        @include btnfunction(93%,50px);
-        line-height: 25px;
-        margin-bottom: 15px;
-        .test{
-            margin: 0;
-        }
-        .testp{
-            margin: 0;
-            font-weight: normal;
-            span{
-                float: right;
-                font-weight: bold;
-                margin-right: 10px;
+        &_plats{
+            
+            &categorie{
+                
+                &_text{
+                    margin-top: 35px;
+                    .testspan{
+                        border-bottom: 3px solid map-get($color, Tertiaire);
+                    }
+                }
+                &_block{
+                    @extend .flexprprety;
+                    @include btn(15px,8px,map-get($color,noir),$colorgray,16px,bold);
+                    @include btnfunction(95%,40px);
+                    line-height: 22px;
+                    margin-bottom: 15px;
+                    padding:8px;
+                    .test{
+                        margin: 0;
+                    }
+                    .testp{
+                        margin: 0;
+                        font-weight: normal;
+                        font-size: 14px;
+                        span{
+                            float: right;
+                            font-weight: bold;
+                            margin-right: 10px;
+                        }
+                    }
+                }
             }
         }
+        &_btncommander{
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            width: 150px;
+            padding-left: 30%;
+            &_button{
+                @include btn(30px,10px 40px ,#fff,linear-gradient((map-get($color,Secondaire)), (map-get($color,Primaire))),15px,normal);
+            }
         }
-        
-    }   
     }
+}
     
