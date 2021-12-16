@@ -186,8 +186,7 @@ footer{
     } 
 }
 /* pages*/
-.header{
-    &-menu{
+.header-menu{
         display: flex;
         flex-direction:row;
         align-items: center;
@@ -202,8 +201,6 @@ footer{
             color: black;
         }
     }  
-}
-
 .menu{
     &-img{
         object-fit: fill;
