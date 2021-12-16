@@ -20,7 +20,7 @@ body{
     @extend .flexprprety;
     align-items: center;
     &logo{
-        @include logosize;
+        @include logosize(40%);
         margin-bottom: 10px;
     }
     &search{
@@ -186,3 +186,70 @@ footer{
         padding-right:7px;
     } 
 }
+/* pages*/
+.header{
+    &-menu{
+        display: flex;
+        flex-direction:row;
+        align-items: center;
+        justify-content: center;
+        margin-top:5px;
+    h1{
+        @include fonttitle;
+        margin: 0;
+        padding-right: 50px;
+        
+    }
+    .fas{
+        padding-right: 70px;
+    }
+    }  
+}
+
+.menu{
+    
+    &-img{
+        object-fit: fill;
+        width: 100%;
+    }
+    &-list{
+        @extend .flexprprety;
+        background-color:$colorgray ;
+        margin-top: -50px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        padding:0px 20px;
+        &_title{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 25px;
+            h2{
+                @include fonttitle;
+                margin:0;
+            }
+        }
+        &_card{
+        @extend .flexprprety;
+        @include btn(15px,10px,map-get($color,noir),$colorgray,16px,bold);
+        @include btnfunction(93%,50px);
+        line-height: 25px;
+        margin-bottom: 15px;
+        .test{
+            margin: 0;
+        }
+        .testp{
+            margin: 0;
+            font-weight: normal;
+            span{
+                float: right;
+                font-weight: bold;
+                margin-right: 10px;
+            }
+        }
+        }
+        
+    }   
+    }
+    

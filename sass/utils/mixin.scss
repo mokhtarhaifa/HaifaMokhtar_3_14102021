@@ -1,5 +1,5 @@
-@mixin logosize{
-    width: 40%;
+@mixin logosize($larger){
+    width: $larger;
 }
 @mixin fonttext {
     font-family:  Roboto, sans-serif;
