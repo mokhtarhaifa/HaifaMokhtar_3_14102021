@@ -10,15 +10,12 @@ body{
 .headerproperty {
     text-align: center;
 }
-.flexprprety {
-    display: flex;
-    flex-direction: column; 
-}
+
+$gradient:linear-gradient((map-get($color,Secondaire)), (map-get($color,black)));
 /* header*/
 .header{
     margin-top: 10px;
-    @extend .flexprprety;
-    align-items: center;
+    @include flexprprety(column,center);
     &logo{
         @include logosize(40%);
         margin-bottom: 10px;
@@ -44,8 +41,7 @@ body{
         background-color: $colorgray;
         width: $larger;
         height: 330px;
-        @extend .flexprprety;
-        align-items: center;
+        @include flexprprety(column,center);
         h1{
                 @extend .headerproperty;
                 font-size: 30px;
@@ -61,7 +57,7 @@ body{
             margin-top: 15px;
         }
         a:hover{
-            color:map-get($color,noir);
+            @include hovercolor(0.8);
         }
     }
 }
@@ -72,22 +68,18 @@ body{
 
 /*block fontionnement*/
 main{
-    @extend .flexprprety;
+    @include flexprprety(column,initial);
     h2{
         margin-left: 20px;
     }
     .blocksteps{
-        @extend .flexprprety;
-        align-items: center;
+        @include flexprprety(column,center);
         margin-left: 0px;
     }
     .step{
-        
-        display: flex;
-        flex-direction: row;
+        @include flexprprety(row,center);
         @include btn(20px,10px,map-get($color,noir),$colorgray,18px,bold);
         @include btnfunction(80%,50px);
-        align-items: center;
         margin-bottom: 20px;
         
         
@@ -102,7 +94,7 @@ main{
         &number{
             @include btn(50%,3px,#fff,map-get($color,Primaire),15px,lighter);
             @include btnfunction(20px,19px);
-            text-align: center;
+            @extend .headerproperty;
             margin-left: -20px;
             
         }
@@ -117,11 +109,11 @@ main{
         
     }
     .restaurant{
-        @extend .flexprprety;
+        @include flexprprety(column,initial);
         background-color: $colorgray;
         padding-top: 15px;
         &-card{
-            @extend .flexprprety;
+            @include flexprprety(column,initial);
             @include cardmenu;
             text-decoration: none;
             color: map-get($color, noir);
@@ -151,8 +143,7 @@ main{
             &_description{
                 line-height: 10px;
                 padding:12px 20px;
-                display: flex;
-                flex-direction: row;
+                @include flexprprety(row,initial);
                 justify-content: space-between;  
             }
             
@@ -163,7 +154,7 @@ main{
 /*footer*/
 footer{
     background-color:darken($colorgray,80);
-    @extend .flexprprety;
+    @include flexprprety(column,initial);
     h3{
         margin-left: 40px;
         margin-top: 30px;
@@ -185,29 +176,34 @@ footer{
         padding-right:7px;
     } 
 }
-/* pages*/
+
+/* pages menu*/
+
+/*--header--*/
 .header-menu{
-        display: flex;
-        flex-direction:row;
-        align-items: center;
+    @include flexprprety(row,center);
         margin-top:5px;
-        margin-left: 30px;
+        justify-content:space-evenly;
         h1{
             @include fonttitle;
             margin: 0;
-            padding-left: 80px;
+            margin-right: 40px;
         }
         a{
             color: black;
         }
+        .fas{
+            margin-left: -45px;
+        }
     }  
+/*main pg menu*/
 .menu{
     &-img{
         object-fit: fill;
         width: 100%;
     }
     &-card{
-        @extend .flexprprety;
+        @include flexprprety(column,initial);
         padding:12px;
         background-color:$colorgray ;
         margin-top: -50px;
@@ -215,9 +211,7 @@ footer{
         border-top-right-radius: 50px;
     
         &_title{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
+            @include flexprprety(row,center);
             justify-content: space-between;
             margin-top: 35px;
             h2{
@@ -240,7 +234,7 @@ footer{
                     }
                 }
                 &_block{
-                    @extend .flexprprety;
+                    @include flexprprety(column,initial);
                     @include btn(15px,8px,map-get($color,noir),$colorgray,16px,bold);
                     @include btnfunction(95%,40px);
                     line-height: 22px;
@@ -265,11 +259,14 @@ footer{
         &_btncommander{
             margin-top: 30px;
             margin-bottom: 30px;
-            text-align: center;
+            @extend .headerproperty;
             width: 150px;
-            padding-left: 30%;
+            padding-left: 27%;
             &_button{
                 @include btn(30px,10px 40px ,#fff,linear-gradient((map-get($color,Secondaire)), (map-get($color,Primaire))),15px,normal);
+            &:hover{
+                @include hovercolor(0.8);
+            }
             }
         }
     }

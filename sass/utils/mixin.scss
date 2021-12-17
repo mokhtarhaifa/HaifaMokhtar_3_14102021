@@ -7,7 +7,15 @@
 @mixin fonttitle {
     font-family:   Shrikhand, sans-serif;
 }
-   
+@mixin hovercolor ($opacitydegre) {
+    opacity: $opacitydegre;
+}   
+@mixin flexprprety($direcetion,$alignment) {
+    display: flex;
+    flex-direction: $direcetion;
+    align-items:$alignment;
+}
+
 @mixin btn($raduis,$espace,$couleur,$bgcolor,$size,$ftweight){
     border-radius: $raduis;
     padding:$espace;
