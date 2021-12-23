@@ -185,11 +185,11 @@ main .restaurant-card_description {
 }
 
 .fa-heart {
-  transition-duration: all 1s;
+  transition-duration: all 2s;
 }
 .fa-heart:hover {
   font-weight: 900;
-  background: linear-gradient(to right, #FF79DA, #E270DA 33%, #A55CDB 77%, #9356DC);
+  background: linear-gradient(to top, #FF79DA, #9356DC);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -301,20 +301,13 @@ footer .footer_icon {
   opacity: 0;
   animation: apparition 1s forwards;
 }
+.menu-card_platscategorie_block :hover + .checkpart {
+  opacity: 1;
+  width: 20%;
+}
 .menu-card_platscategorie_block .platname {
   width: 100%;
   padding: 10px;
-}
-.menu-card_platscategorie_block .checkpart {
-  background-color: #99E2D0;
-  width: 20%;
-  text-align: center;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-}
-.menu-card_platscategorie_block .checked {
-  margin-top: 25px;
-  color: white;
 }
 .menu-card_platscategorie_block .test {
   margin: 0;
@@ -327,7 +320,21 @@ footer .footer_icon {
 .menu-card_platscategorie_block .testp span {
   float: right;
   font-weight: bold;
-  margin-right: 10px;
+  float: right;
+}
+.menu-card_platscategorie_block .checkpart {
+  background-color: #99E2D0;
+  text-align: center;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  opacity: 0;
+  transition: width opacity 2s ease-in-out;
+  transform: rotate(360deg);
+}
+.menu-card_platscategorie_block .checkpart .checked {
+  margin-top: 25px;
+  color: white;
+  transition: 0.5s linear;
 }
 .menu-card_platscategorie .entre {
   animation-delay: 200ms;

@@ -155,10 +155,10 @@ main{
     }
 }
 .fa-heart{
-    transition-duration: all 1s;
+    transition-duration: all 2s;
     &:hover{
         font-weight: 900;
-        background: linear-gradient(to right, (map-get($color,Secondaire)), #E270DA 33%, #A55CDB 77%, (map-get($color,Primaire)));
+        background: linear-gradient(to top, (map-get($color,Secondaire)), (map-get($color,Primaire)));
         background-clip:text;
         -webkit-background-clip:text;
         color:transparent;
@@ -256,21 +256,17 @@ footer{
                     background-color: #fff;
                     opacity: 0;
                     animation: apparition 1s forwards;
+                    
+                    :hover + .checkpart {
+                        opacity: 1;
+                        width: 20%;
+                    }
+                    
                     .platname{
                         width: 100%;
                         padding: 10px;
                     }
-                    .checkpart{
-                        background-color: map-get($color,Tertiaire );
-                        width: 20%;
-                        text-align: center;
-                        border-top-right-radius: 15px;
-                        border-bottom-right-radius: 15px;
-                    }
-                    .checked{
-                        margin-top: 25px;
-                        color: white;
-                    }
+                    
                     .test{
                         margin: 0;
                     }
@@ -281,9 +277,28 @@ footer{
                         span{
                             float: right;
                             font-weight: bold;
-                            margin-right: 10px;
+                            float: right;
                         }
                     }
+                    .checkpart{
+                        background-color: map-get($color,Tertiaire );
+                        text-align: center;
+                        border-top-right-radius: 15px;
+                        border-bottom-right-radius: 15px;
+                        opacity: 0;
+                        transition: width  opacity 2s ease-in-out;
+                        
+                        
+                        transform: rotate(360deg);
+                        .checked{
+                            margin-top: 25px;
+                            color: white;
+                            transition: 0.5s linear;
+                        }
+                        
+                        
+                    }
+                     
                 }
                 .entre{
                     animation-delay:200ms;
