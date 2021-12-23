@@ -282,10 +282,10 @@ footer .footer_icon {
 }
 .menu-card_platscategorie_block {
   display: flex;
-  flex-direction: column;
-  align-items: initial;
+  flex-direction: row;
+  align-items: space-between;
   border-radius: 15px;
-  padding: 8px;
+  padding: 0px;
   color: black;
   background: #F5F5F5;
   font-size: 16px;
@@ -294,12 +294,27 @@ footer .footer_icon {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   text-decoration: none;
   width: 95%;
-  height: 40px;
+  height: auto;
   line-height: 22px;
   margin-bottom: 15px;
   background-color: #fff;
   opacity: 0;
   animation: apparition 1s forwards;
+}
+.menu-card_platscategorie_block .platname {
+  width: 100%;
+  padding: 10px;
+}
+.menu-card_platscategorie_block .checkpart {
+  background-color: #99E2D0;
+  width: 15%;
+  text-align: center;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.menu-card_platscategorie_block .checked {
+  margin-top: 25px;
+  color: white;
 }
 .menu-card_platscategorie_block .test {
   margin: 0;

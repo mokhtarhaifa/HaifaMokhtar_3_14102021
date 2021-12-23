@@ -155,7 +155,6 @@ main{
     }
 }
 .fa-heart{
- 
     transition-duration: all 1s;
     &:hover{
         font-weight: 900;
@@ -249,14 +248,29 @@ footer{
                     }
                 }
                 &_block{
-                    @include flexprprety(column,initial);
-                    @include btn(15px,8px,map-get($color,noir),$colorgray,16px,bold);
-                    @include btnfunction(95%,40px);
+                    @include flexprprety(row,space-between);
+                    @include btn(15px,0px,map-get($color,noir),$colorgray,16px,bold);
+                    @include btnfunction(95%,auto);
                     line-height: 22px;
                     margin-bottom: 15px;
                     background-color: #fff;
                     opacity: 0;
                     animation: apparition 1s forwards;
+                    .platname{
+                        width: 100%;
+                        padding: 10px;
+                    }
+                    .checkpart{
+                        background-color: map-get($color,Tertiaire );
+                        width: 15%;
+                        text-align: center;
+                        border-top-right-radius: 15px;
+                        border-bottom-right-radius: 15px;
+                    }
+                    .checked{
+                        margin-top: 25px;
+                        color: white;
+                    }
                     .test{
                         margin: 0;
                     }
