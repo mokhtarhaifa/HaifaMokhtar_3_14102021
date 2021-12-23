@@ -126,6 +126,11 @@ main{
                 object-fit: fill;
                 width: 100%;
             } 
+            .imgfix{
+                object-position: 40% 60%;
+                object-fit: cover;
+            }
+            
             &_badge{
                 position: absolute;
                 background-color: map-get($color, Tertiaire);
@@ -144,13 +149,23 @@ main{
                 line-height: 10px;
                 padding:12px 20px;
                 @include flexprprety(row,initial);
-                justify-content: space-between;  
+                justify-content: space-between;
             }
-            
-        
         } 
     }
 }
+.fa-heart{
+ 
+    transition-duration: all 1s;
+    &:hover{
+        font-weight: 900;
+        background: linear-gradient(to right, (map-get($color,Secondaire)), #E270DA 33%, #A55CDB 77%, (map-get($color,Primaire)));
+        background-clip:text;
+        -webkit-background-clip:text;
+        color:transparent;
+    }
+}
+
 /*footer*/
 footer{
     background-color:darken($colorgray,80);
@@ -177,7 +192,7 @@ footer{
     } 
 }
 
-/* pages menu*/
+/*---- pages menu ----*/
 
 /*--header--*/
 .header-menu{
@@ -239,7 +254,9 @@ footer{
                     @include btnfunction(95%,40px);
                     line-height: 22px;
                     margin-bottom: 15px;
-                    padding:8px;
+                    background-color: #fff;
+                    opacity: 0;
+                    animation: apparition 1s forwards;
                     .test{
                         margin: 0;
                     }
@@ -254,10 +271,19 @@ footer{
                         }
                     }
                 }
+                .entre{
+                    animation-delay:200ms;
+                }
+                .plat{
+                    animation-delay:400ms;
+                }
+                .dessert{
+                    animation-delay:600ms;
+                }
             }
         }
         &_btncommander{
-            margin-top: 30px;
+            margin-top: 40px;
             margin-bottom: 30px;
             @extend .headerproperty;
             width: 150px;
@@ -272,3 +298,15 @@ footer{
     }
 }
     
+/** Animation**/
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+}
