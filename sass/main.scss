@@ -250,7 +250,7 @@ footer{
                 &_block{
                     @include flexprprety(row,space-between);
                     @include btn(15px,0px,map-get($color,noir),$colorgray,16px,bold);
-                    @include btnfunction(95%,auto);
+                    @include btnfunction(100%,auto);
                     line-height: 22px;
                     margin-bottom: 15px;
                     background-color: #fff;
@@ -262,7 +262,7 @@ footer{
                     }
                     .checkpart{
                         background-color: map-get($color,Tertiaire );
-                        width: 15%;
+                        width: 20%;
                         text-align: center;
                         border-top-right-radius: 15px;
                         border-bottom-right-radius: 15px;
