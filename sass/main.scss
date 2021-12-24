@@ -154,16 +154,14 @@ main{
         } 
     }
 }
-.fa-heart{
-    transition-duration: all 2s;
-    &:hover{
+.fa-heart:hover{
         font-weight: 900;
         background: linear-gradient(to top, (map-get($color,Secondaire)), (map-get($color,Primaire)));
         background-clip:text;
         -webkit-background-clip:text;
         color:transparent;
     }
-}
+
 
 /*footer*/
 footer{
@@ -255,11 +253,13 @@ footer{
                     margin-bottom: 15px;
                     background-color: #fff;
                     opacity: 0;
-                    animation: apparition 1s forwards;
+                    animation: apparition 800ms forwards linear;
                     
                     :hover + .checkpart {
-                        opacity: 1;
-                        width: 20%;
+                        animation: checkmenu 1s forwards;
+                        & .fa-check-circle{
+                            transform: rotate(360deg);
+                        }
                     }
                     
                     .platname{
@@ -286,17 +286,11 @@ footer{
                         border-top-right-radius: 15px;
                         border-bottom-right-radius: 15px;
                         opacity: 0;
-                        transition: width  opacity 2s ease-in-out;
-                        
-                        
-                        transform: rotate(360deg);
                         .checked{
                             margin-top: 25px;
                             color: white;
-                            transition: 0.5s linear;
+                            transition: transform 1s;
                         }
-                        
-                        
                     }
                      
                 }
@@ -338,4 +332,15 @@ footer{
         opacity: 1;
     }
 
+}
+@keyframes checkmenu {
+    0%{
+        opacity:0;
+        width:0;
+    }
+    100%{
+        opacity: 1;
+        width: 20%;
+    }
+    
 }

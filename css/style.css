@@ -184,9 +184,6 @@ main .restaurant-card_description {
   justify-content: space-between;
 }
 
-.fa-heart {
-  transition-duration: all 2s;
-}
 .fa-heart:hover {
   font-weight: 900;
   background: linear-gradient(to top, #FF79DA, #9356DC);
@@ -299,11 +296,13 @@ footer .footer_icon {
   margin-bottom: 15px;
   background-color: #fff;
   opacity: 0;
-  animation: apparition 1s forwards;
+  animation: apparition 800ms forwards linear;
 }
 .menu-card_platscategorie_block :hover + .checkpart {
-  opacity: 1;
-  width: 20%;
+  animation: checkmenu 1s forwards;
+}
+.menu-card_platscategorie_block :hover + .checkpart .fa-check-circle {
+  transform: rotate(360deg);
 }
 .menu-card_platscategorie_block .platname {
   width: 100%;
@@ -328,13 +327,11 @@ footer .footer_icon {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   opacity: 0;
-  transition: width opacity 2s ease-in-out;
-  transform: rotate(360deg);
 }
 .menu-card_platscategorie_block .checkpart .checked {
   margin-top: 25px;
   color: white;
-  transition: 0.5s linear;
+  transition: transform 1s;
 }
 .menu-card_platscategorie .entre {
   animation-delay: 200ms;
@@ -375,6 +372,16 @@ footer .footer_icon {
   to {
     transform: translateY(0px);
     opacity: 1;
+  }
+}
+@keyframes checkmenu {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  100% {
+    opacity: 1;
+    width: 20%;
   }
 }
 
