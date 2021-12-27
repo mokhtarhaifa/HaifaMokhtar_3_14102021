@@ -1,0 +1,155 @@
+/*---- pages menu ----*/
+
+/*--header--*/
+.header-menu{
+    @include flexprprety(row,center);
+        margin-top:5px;
+        justify-content:space-evenly;
+        h1{
+            @extend .fonttitle;
+            margin: 0;
+            margin-right: 40px;
+        }
+        a{
+            color: black;
+        }
+        .fas{
+            margin-left: -45px;
+        }
+    }  
+/*main pg menu*/
+.menu{
+    &-img{
+        object-fit: fill;
+        width: $larger;
+    }
+    &-card{
+        @include flexprprety(column,initial);
+        padding:12px;
+        background-color:$colorgray ;
+        margin-top: -50px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+    
+        &_title{
+            @include flexprprety(row,center);
+            justify-content: space-between;
+            margin-top: 35px;
+            h2{
+                @extend .fonttitle;
+                margin:0;
+                padding-right: 35px;
+            }
+            .far{
+                padding-right: 25px;
+            }
+        }
+        &_plats{
+            
+            &categorie{
+                
+                &_text{
+                    margin-top: 35px;
+                    .testspan{
+                        border-bottom: 3px solid map-get($color, Tertiaire);
+                    }
+                }
+                &_block{
+                    @include flexprprety(row,space-between);
+                    @include btn(15px,0px,map-get($color,noir),$colorgray,16px,bold);
+                    @include size($larger,auto);
+                    line-height: 22px;
+                    margin-bottom: 15px;
+                    background-color: #fff;
+                    opacity: 0;
+                    animation: apparition 800ms forwards linear;
+                    
+                    :active + .checkpart {
+                        animation: checkmenu 1s forwards ease-out;
+                        & .fa-check-circle{
+                            transform: rotate(360deg);
+                        }
+                    }
+                    
+                    .platname{
+                        width: $larger;
+                        padding: 10px;
+                    }
+                    
+                    .test{
+                        margin: 0;
+                    }
+                    .testp{
+                        margin: 0;
+                        font-weight: normal;
+                        font-size: 14px;
+                        span{
+                            float: right;
+                            font-weight: bold;
+                            float: right;
+                        }
+                    }
+                    .checkpart{
+                        background-color: map-get($color,Tertiaire );
+                        text-align: center;
+                        border-top-right-radius: 15px;
+                        border-bottom-right-radius: 15px;
+                        opacity: 0;
+                        .checked{
+                            margin-top: 25px;
+                            color: white;
+                            transition: transform 1s;
+                        }
+                    }
+                     
+                }
+                .entre{
+                    animation-delay:200ms;
+                }
+                .plat{
+                    animation-delay:400ms;
+                }
+                .dessert{
+                    animation-delay:600ms;
+                }
+            }
+        }
+        &_btncommander{
+            margin-top: 40px;
+            margin-bottom: 30px;
+            @extend .textcenter;
+            width: 150px;
+            padding-left: 27%;
+            &_button{
+                @include btn(30px,10px 40px ,#fff,linear-gradient((map-get($color,Secondaire)), (map-get($color,Primaire))),15px,normal);
+            &:hover{
+                opacity:0.8;
+            }
+            }
+        }
+    }
+}
+    
+/** Animation page menu**/
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+}
+@keyframes checkmenu {
+    0%{
+        opacity:0;
+        width:0;
+    }
+    100%{
+        opacity: 1;
+        width: 20%;
+    }
+    
+}

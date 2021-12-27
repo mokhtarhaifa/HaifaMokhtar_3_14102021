@@ -1,15 +1,6 @@
-@mixin logosize($larger){
-    width: $larger;
-}
-@mixin fonttext {
-    font-family:  Roboto, sans-serif;
-}
-@mixin fonttitle {
-    font-family:   Shrikhand, sans-serif;
-}
-@mixin hovercolor ($opacitydegre) {
-    opacity: $opacitydegre;
-}   
+
+
+  
 @mixin flexprprety($direcetion,$alignment) {
     display: flex;
     flex-direction: $direcetion;
@@ -28,15 +19,8 @@
     text-decoration: none;
     
 }
-@mixin btnfunction($largeur,$hauteur) {
+@mixin size($largeur,$hauteur) {
     width: $largeur;
     height: $hauteur;
     
-}
-@mixin cardmenu {
-    margin-left: 15px;
-    background-color:white;
-    width:90%;
-    height: auto;
-    border-radius: 20px;
 }

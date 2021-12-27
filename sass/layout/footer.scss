@@ -1,0 +1,24 @@
+footer{
+    background-color:darken($colorgray,80);
+    @include flexprprety(column,initial);
+    h3{
+        margin-left: 40px;
+        margin-top: 30px;
+        color: white;
+        @extend .fonttitle;
+    }
+    ul{
+        margin-top: 5px;
+    }
+    ul li{
+        list-style: none;
+        margin-bottom: 10px;
+        .footer_link{
+            text-decoration: none;
+            color: white;
+        } 
+    }
+    .footer_icon{
+        padding-right:7px;
+    } 
+}

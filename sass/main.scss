@@ -1,34 +1,48 @@
 @import "./utils/mixin.scss";
 @import "./utils/variables.scss";
-
-body{
-    margin: auto;
-    @include fonttext;
-}
+@import "./layout/footer.scss";
+@import "./pages/menupage.scss";
+@import "./pages/loaderspinner.scss";
 
 /*maps*/
-.headerproperty {
+.textcenter {
     text-align: center;
 }
 
-$gradient:linear-gradient((map-get($color,Secondaire)), (map-get($color,black)));
+.fonttext {
+    font-family: Roboto, sans-serif;
+}
+
+.fonttitle {
+    font-family: Shrikhand, sans-serif;
+}
+.cardmenu {
+    margin-left: 15px;
+    background-color:white;
+    width:90%;
+    height: auto;
+    border-radius: 20px;
+}
+/**container**/
+body{
+    margin: auto;
+    @extend .fonttext;
+}
 /* header*/
 .header{
     margin-top: 10px;
     @include flexprprety(column,center);
     &logo{
-        @include logosize(40%);
+        width:40%;
         margin-bottom: 10px;
     }
     &search{
-        @extend .headerproperty;
+        @extend .textcenter;
         background-color: darken($colorgray,10);
         padding-top: 20px;
         box-shadow: inset 0 7px 10px -6px grey;
-        width: $larger;
-        height: 40px;
+        @include size($larger,40px);
         color:map-get($color,noir);
-        
     }
     &input{
         background-color: transparent;
@@ -39,25 +53,24 @@ $gradient:linear-gradient((map-get($color,Secondaire)), (map-get($color,black)))
     
     .banner{
         background-color: $colorgray;
-        width: $larger;
-        height: 330px;
+        @include size($larger,330px);
         @include flexprprety(column,center);
         h1{
-                @extend .headerproperty;
+                @extend .textcenter;
                 font-size: 30px;
                 padding-top: 10px;  
         }
         p{
-            @extend .headerproperty;
+            @extend .textcenter;
             font-size: 20px;
             color: darken($colorgray,70);
         }
         &button{
-            @include btn(30px,20px,#fff,linear-gradient((map-get($color,Secondaire)), (map-get($color,Primaire))),17px,bold);
+            @include btn(30px,20px,#fff,linear-gradient((map-get($color,Secondaire)),(map-get($color,Primaire))),17px,bold);
             margin-top: 15px;
         }
         a:hover{
-            @include hovercolor(0.8);
+            opacity: 0.8;
         }
     }
 }
@@ -79,7 +92,7 @@ main{
     .step{
         @include flexprprety(row,center);
         @include btn(20px,10px,map-get($color,noir),$colorgray,18px,bold);
-        @include btnfunction(80%,50px);
+        @include size(80%,50px);
         margin-bottom: 20px;
         &:hover{
             background:lighten((map-get($color, Primaire)),30);
@@ -89,8 +102,8 @@ main{
         }
         &number{
             @include btn(50%,3px,#fff,map-get($color,Primaire),15px,lighter);
-            @include btnfunction(20px,19px);
-            @extend .headerproperty;
+            @include size(20px,19px);
+            @extend .textcenter;
             margin-left: -20px;
             
         }
@@ -110,7 +123,7 @@ main{
         padding-top: 15px;
         &-card{
             @include flexprprety(column,initial);
-            @include cardmenu;
+            @extend .cardmenu;
             text-decoration: none;
             color: map-get($color, noir);
             margin-bottom: 30px;
@@ -118,9 +131,8 @@ main{
             &_image{
                 border-top-left-radius: 20px;
                 border-top-right-radius: 20px;
-                height: 180px;
                 object-fit: fill;
-                width: 100%;
+                @include size($larger,180px);
             } 
             .imgfix{
                 object-position: 40% 60%;
@@ -159,237 +171,5 @@ main{
     }
 
 
-/*footer*/
-footer{
-    background-color:darken($colorgray,80);
-    @include flexprprety(column,initial);
-    h3{
-        margin-left: 40px;
-        margin-top: 30px;
-        color: white;
-        @include fonttitle;
-    }
-    ul{
-        margin-top: 5px;
-    }
-    ul li{
-        list-style: none;
-        margin-bottom: 10px;
-        .footer_link{
-            text-decoration: none;
-            color: white;
-        } 
-    }
-    .footer_icon{
-        padding-right:7px;
-    } 
-}
-
-/*---- pages menu ----*/
-
-/*--header--*/
-.header-menu{
-    @include flexprprety(row,center);
-        margin-top:5px;
-        justify-content:space-evenly;
-        h1{
-            @include fonttitle;
-            margin: 0;
-            margin-right: 40px;
-        }
-        a{
-            color: black;
-        }
-        .fas{
-            margin-left: -45px;
-        }
-    }  
-/*main pg menu*/
-.menu{
-    &-img{
-        object-fit: fill;
-        width: 100%;
-    }
-    &-card{
-        @include flexprprety(column,initial);
-        padding:12px;
-        background-color:$colorgray ;
-        margin-top: -50px;
-        border-top-left-radius: 50px;
-        border-top-right-radius: 50px;
-    
-        &_title{
-            @include flexprprety(row,center);
-            justify-content: space-between;
-            margin-top: 35px;
-            h2{
-                @include fonttitle;
-                margin:0;
-                padding-right: 35px;
-            }
-            .far{
-                padding-right: 25px;
-            }
-        }
-        &_plats{
-            
-            &categorie{
-                
-                &_text{
-                    margin-top: 35px;
-                    .testspan{
-                        border-bottom: 3px solid map-get($color, Tertiaire);
-                    }
-                }
-                &_block{
-                    @include flexprprety(row,space-between);
-                    @include btn(15px,0px,map-get($color,noir),$colorgray,16px,bold);
-                    @include btnfunction(100%,auto);
-                    line-height: 22px;
-                    margin-bottom: 15px;
-                    background-color: #fff;
-                    opacity: 0;
-                    animation: apparition 800ms forwards linear;
-                    
-                    :active + .checkpart {
-                        animation: checkmenu 1s forwards ease-out;
-                        & .fa-check-circle{
-                            transform: rotate(360deg);
-                        }
-                    }
-                    
-                    .platname{
-                        width: 100%;
-                        padding: 10px;
-                    }
-                    
-                    .test{
-                        margin: 0;
-                    }
-                    .testp{
-                        margin: 0;
-                        font-weight: normal;
-                        font-size: 14px;
-                        span{
-                            float: right;
-                            font-weight: bold;
-                            float: right;
-                        }
-                    }
-                    .checkpart{
-                        background-color: map-get($color,Tertiaire );
-                        text-align: center;
-                        border-top-right-radius: 15px;
-                        border-bottom-right-radius: 15px;
-                        opacity: 0;
-                        .checked{
-                            margin-top: 25px;
-                            color: white;
-                            transition: transform 1s;
-                        }
-                    }
-                     
-                }
-                .entre{
-                    animation-delay:200ms;
-                }
-                .plat{
-                    animation-delay:400ms;
-                }
-                .dessert{
-                    animation-delay:600ms;
-                }
-            }
-        }
-        &_btncommander{
-            margin-top: 40px;
-            margin-bottom: 30px;
-            @extend .headerproperty;
-            width: 150px;
-            padding-left: 27%;
-            &_button{
-                @include btn(30px,10px 40px ,#fff,linear-gradient((map-get($color,Secondaire)), (map-get($color,Primaire))),15px,normal);
-            &:hover{
-                @include hovercolor(0.8);
-            }
-            }
-        }
-    }
-}
-    
-/** Animation**/
-@keyframes apparition {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        transform: translateY(0px);
-        opacity: 1;
-    }
-
-}
-@keyframes checkmenu {
-    0%{
-        opacity:0;
-        width:0;
-    }
-    100%{
-        opacity: 1;
-        width: 20%;
-    }
-    
-}
-/**loading**/
-.loading{
-    background-color:darken($colorgray,80);
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    position: fixed;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    animation: testdisp 1s 4s both;
-    &-spinner{
-        position: relative;
-        width: 300px;
-        height: 25px;
-        border-radius: 50px;
-        border: 2px solid #ededed;
-        overflow: hidden;
-    }
-    .loader{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background: linear-gradient((map-get($color,Secondaire)), (map-get($color,Primaire)));
-    }
-    .loader{
-        right: 100%;
-        animation: load 3s 500ms ;
-        
-    }
-}
 
 
-
-@keyframes load{
-    0%{
-        left: 100%;
-    }
-    100%{
-        right: -100%;
-    }
-}
-@keyframes testdisp {
-    0% {
-        opacity: 0.95;
-    }
-    100% {
-        opacity: 0;
-    }
-}
