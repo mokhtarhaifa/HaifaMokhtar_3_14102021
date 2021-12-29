@@ -35,7 +35,11 @@ body{
     &logo{
         width:40%;
         margin-bottom: 10px;
+        @media (min-width: 1025px){
+            width:20%;
+        }
     }
+    
     &search{
         @extend .textcenter;
         background-color: darken($colorgray,10);
@@ -83,16 +87,36 @@ body{
 main{
     @include flexprprety(column,initial);
     h2{
+        @media (min-width: 768px) and (max-width: 1024px){
+            text-align: center;
+        }
+        @media (min-width: 1025px){
+            text-align: center;
+        }
         margin-left: 20px;
+        
     }
     .blocksteps{
+        
         @include flexprprety(column,center);
         margin-left: 0px;
+        @media (min-width: 1025px){
+            @include flexprprety(row,center);
+            justify-content: center;
+        }
     }
     .step{
         @include flexprprety(row,center);
         @include btn(20px,10px,map-get($color,noir),$colorgray,18px,bold);
         @include size(80%,50px);
+        @media (min-width: 768px) and (max-width: 1024px){
+            width: 40%;
+        }
+        @media (min-width: 1025px){
+            width: 25%;
+            margin-left: 50px;
+            margin-bottom: 40px;
+        }
         margin-bottom: 20px;
         &:hover{
             background:lighten((map-get($color, Primaire)),30);
@@ -121,13 +145,32 @@ main{
         @include flexprprety(column,initial);
         background-color: $colorgray;
         padding-top: 15px;
-        &-card{
+        &-resto{
             @include flexprprety(column,initial);
+            @media (min-width: 768px) and (max-width: 1024px){
+                @include flexprprety(row,center);
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            @media (min-width: 1025px){
+                @include flexprprety(row,center);
+                margin-right: 15px;
+            }
+
+        }
+        &-card{
             @extend .cardmenu;
             text-decoration: none;
             color: map-get($color, noir);
             margin-bottom: 30px;
             height: 255px;
+            position: relative;
+            @media (min-width: 768px) and (max-width: 1024px){
+                width:40%;
+                position:relative;
+                
+            }
+            
             &_image{
                 border-top-left-radius: 20px;
                 border-top-right-radius: 20px;

@@ -1,14 +1,31 @@
 footer{
     background-color:darken($colorgray,80);
     @include flexprprety(column,initial);
+
+    @media (min-width: 768px) and (max-width: 1024px){
+        text-align: center;
+    }
+
+    @media (min-width: 1025px){
+        @include flexprprety(row,center);
+        
+        justify-content:  center;
+    }
+
     h3{
         margin-left: 40px;
         margin-top: 30px;
         color: white;
         @extend .fonttitle;
+        @media (min-width: 768px) and (max-width: 1024px){
+            margin-left: 0;
+        }
     }
     ul{
         margin-top: 5px;
+        @media (min-width: 768px) and (max-width: 1024px){
+            padding: 0;
+        }
     }
     ul li{
         list-style: none;
@@ -17,8 +34,17 @@ footer{
             text-decoration: none;
             color: white;
         } 
+        
+        @media (min-width: 1025px){
+            float: left;
+            margin-top: 30px;
+            margin-left: 40px;
+            
+        }
     }
     .footer_icon{
         padding-right:7px;
     } 
+    
+    
 }

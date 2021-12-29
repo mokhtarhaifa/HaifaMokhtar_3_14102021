@@ -4,13 +4,36 @@ footer {
   flex-direction: column;
   align-items: initial;
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  footer {
+    text-align: center;
+  }
+}
+@media (min-width: 1025px) {
+  footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
 footer h3 {
   margin-left: 40px;
   margin-top: 30px;
   color: white;
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  footer h3 {
+    margin-left: 0;
+  }
+}
 footer ul {
   margin-top: 5px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  footer ul {
+    padding: 0;
+  }
 }
 footer ul li {
   list-style: none;
@@ -19,6 +42,13 @@ footer ul li {
 footer ul li .footer_link {
   text-decoration: none;
   color: white;
+}
+@media (min-width: 1025px) {
+  footer ul li {
+    float: left;
+    margin-top: 30px;
+    margin-left: 40px;
+  }
 }
 footer .footer_icon {
   padding-right: 7px;
@@ -31,23 +61,49 @@ footer .footer_icon {
   flex-direction: row;
   align-items: center;
   margin-top: 5px;
-  justify-content: space-evenly;
+  width: 80%;
+  margin-left: 20px;
+  justify-content: center;
 }
 .header-menu h1 {
   margin: 0;
-  margin-right: 40px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .header-menu h1 {
+    margin-right: 150px;
+  }
+}
+@media (min-width: 1025px) {
+  .header-menu h1 {
+    margin-right: 250px;
+  }
 }
 .header-menu a {
   color: black;
 }
 .header-menu .fas {
-  margin-left: -45px;
+  padding-right: 70px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .header-menu .fas {
+    margin-right: 200px;
+  }
+}
+@media (min-width: 1025px) {
+  .header-menu .fas {
+    margin-right: 300px;
+  }
 }
 
 /*main pg menu*/
 .menu-img {
   object-fit: fill;
   width: 100%;
+}
+@media (min-width: 1025px) {
+  .menu-img {
+    height: 600px;
+  }
 }
 .menu-card {
   display: flex;
@@ -59,12 +115,32 @@ footer .footer_icon {
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .menu-card {
+    margin-top: -120px;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+  }
+}
+@media (min-width: 1025px) {
+  .menu-card {
+    margin-top: -200px;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    padding: 40px;
+  }
+}
 .menu-card_title {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   margin-top: 35px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .menu-card_title {
+    justify-content: center;
+  }
 }
 .menu-card_title h2 {
   margin: 0;
@@ -73,16 +149,24 @@ footer .footer_icon {
 .menu-card_title .far {
   padding-right: 25px;
 }
-.menu-card_platscategorie_text {
-  margin-top: 35px;
+@media (min-width: 1025px) {
+  .menu-card_proposition {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }
-.menu-card_platscategorie_text .testspan {
+@media (min-width: 768px) and (max-width: 1024px) {
+  .menu-card_propositionentry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.menu-card_propositionentry .testspan {
   border-bottom: 3px solid #99E2D0;
 }
-.menu-card_platscategorie_block {
-  display: flex;
-  flex-direction: row;
-  align-items: space-between;
+.menu-card_propositionentry .block {
   border-radius: 15px;
   padding: 0px;
   color: black;
@@ -94,61 +178,92 @@ footer .footer_icon {
   text-decoration: none;
   width: 100%;
   height: auto;
-  line-height: 22px;
-  margin-bottom: 15px;
-  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  animation: apparition 1s forwards linear;
+  margin-top: 15px;
+  text-decoration: none;
   opacity: 0;
-  animation: apparition 800ms forwards linear;
 }
-.menu-card_platscategorie_block :active + .checkpart {
+@media (min-width: 768px) and (max-width: 1024px) {
+  .menu-card_propositionentry .block {
+    width: 80%;
+  }
+}
+@media (min-width: 1025px) {
+  .menu-card_propositionentry .block {
+    width: 95%;
+    margin-left: 10px;
+  }
+}
+.menu-card_propositionentry .block :active + .check {
   animation: checkmenu 1s forwards ease-out;
 }
-.menu-card_platscategorie_block :active + .checkpart .fa-check-circle {
+.menu-card_propositionentry .block :active + .check .fa-check-circle {
   transform: rotate(360deg);
 }
-.menu-card_platscategorie_block .platname {
-  width: 100%;
+@media (min-width: 1025px) {
+  .menu-card_propositionentry .block :hover + .check {
+    animation: checkmenu 1s forwards ease-out;
+  }
+  .menu-card_propositionentry .block :hover + .check .fa-check-circle {
+    transform: rotate(360deg);
+  }
+}
+.menu-card_propositionentry .block .carte {
+  display: flex;
+  flex-direction: row;
   padding: 10px;
+  align-items: flex-end;
+  width: 95%;
+  justify-content: space-between;
 }
-.menu-card_platscategorie_block .test {
-  margin: 0;
+.menu-card_propositionentry .block .carte .platdetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
 }
-.menu-card_platscategorie_block .testp {
-  margin: 0;
-  font-weight: normal;
-  font-size: 14px;
+.menu-card_propositionentry .block .carte .platdetails .cartetitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.menu-card_platscategorie_block .testp span {
-  float: right;
-  font-weight: bold;
-  float: right;
+.menu-card_propositionentry .block .carte .platdetails .cartedescirption {
+  font-weight: lighter;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.menu-card_platscategorie_block .checkpart {
+.menu-card_propositionentry .block .carte .platdetails .prix {
+  transition: transform 1s;
+}
+.menu-card_propositionentry .block .check {
   background-color: #99E2D0;
-  text-align: center;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+  text-align: center;
+  margin-left: 5px;
   opacity: 0;
 }
-.menu-card_platscategorie_block .checkpart .checked {
-  margin-top: 25px;
+.menu-card_propositionentry .block .check .checked {
+  margin-top: 20px;
   color: white;
   transition: transform 1s;
 }
-.menu-card_platscategorie .entre {
+.menu-card_propositionentry .entre {
   animation-delay: 200ms;
 }
-.menu-card_platscategorie .plat {
+.menu-card_propositionentry .plat {
   animation-delay: 400ms;
 }
-.menu-card_platscategorie .dessert {
+.menu-card_propositionentry .dessert {
   animation-delay: 600ms;
 }
 .menu-card_btncommander {
   margin-top: 40px;
   margin-bottom: 30px;
-  width: 150px;
-  padding-left: 27%;
 }
 .menu-card_btncommander_button {
   border-radius: 30px;
@@ -186,6 +301,151 @@ footer .footer_icon {
     width: 20%;
   }
 }
+/******  test carte menu  ****
+.divmenus{
+
+
+    a{  
+
+        text-decoration: none;
+        .lienvers{
+            @include btn(15px,0px,map-get($color,noir),$colorgray,16px,bold);
+            @include size($larger,auto);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            :hover + .checkkk {
+                animation: checkmenu 1s forwards ease-out;
+                & .fa-check-circle{
+                    transform: rotate(360deg);
+                }
+            }  
+        }
+        .carte{
+            display: flex;
+            flex-direction: row;
+            padding:10px;
+            align-items: flex-end;
+            width: 95%;
+            justify-content: space-between;
+        }
+        .textt{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width:80%;
+            .cartetitle{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .cartedescirption{
+                font-weight: lighter;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .carteprice{
+               transition: transform 1s;
+            }
+        }
+        .checkkk{
+            background-color: map-get($color,Tertiaire );
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            text-align: center;
+            margin-left: 5px;
+            opacity: 0;
+            .checked{
+                margin-top: 20px;
+                color: white;
+                transition: transform 1s;
+            }
+        }
+    }
+
+}*/
+/*&_block{
+                    @include flexprprety(row,space-between);
+                    @include btn(15px,0px,map-get($color,noir),$colorgray,16px,bold);
+                    @include size($larger,auto);
+                    line-height: 22px;
+                    margin-bottom: 15px;
+                    background-color: #fff;
+                    opacity: 0;
+                    animation: apparition 800ms forwards linear;
+                    @media (min-width: 768px) and (max-width: 1024px){
+                        width: 90%;
+                    }
+                    @media (min-width: 1025px){
+                        width: 40%;
+                        margin-left: 20px;
+                    }
+                    :active + .checkpart {
+                        animation: checkmenu 1s forwards ease-out;
+                        & .fa-check-circle{
+                            transform: rotate(360deg);
+                        }
+
+                    }
+                    @media (min-width: 1025px){
+                        :hover + .checkpart {
+                            animation: checkmenu 1s forwards ease-out;
+                            & .fa-check-circle{
+                                transform: rotate(360deg);
+                            }
+                        }
+                    }
+                    .platname{
+                        width: $larger;
+                        padding: 10px;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        background-color: red;
+                    }
+
+                    .test{
+                        margin: 0;
+                    }
+                    .testp{
+                        margin: 0;
+                        font-weight: normal;
+                        font-size: 14px;
+                        span{
+                            float: right;
+                            font-weight: bold;
+                            float: right;
+
+                        }
+                    }
+                    .checkpart{
+                        background-color: map-get($color,Tertiaire );
+                        text-align: center;
+                        border-top-right-radius: 15px;
+                        border-bottom-right-radius: 15px;
+                        opacity: 0;
+                        .checked{
+                            margin-top: 25px;
+                            color: white;
+                            transition: transform 1s;
+                        }
+                    }
+
+                }
+
+                .lotfi{
+                    @media (min-width: 1025px){
+                        display: flex;
+                        flex-direction: row;
+                    }
+                    @media (min-width: 768px) and (max-width: 1024px){
+                        display: flex;
+                        flex-direction: column;
+                        width: 60%;
+                        justify-content: center;
+                    }
+                }*/
 /**loading**/
 .loading {
   background-color: #292929;
@@ -232,7 +492,7 @@ footer .footer_icon {
   }
   100% {
     opacity: 0;
-    transform: translateX(-999px);
+    transform: translateX(-9999px);
   }
 }
 /*maps*/
@@ -271,6 +531,11 @@ body {
 .headerlogo {
   width: 40%;
   margin-bottom: 10px;
+}
+@media (min-width: 1025px) {
+  .headerlogo {
+    width: 20%;
+  }
 }
 .headersearch {
   background-color: gainsboro;
@@ -331,11 +596,29 @@ main {
 main h2 {
   margin-left: 20px;
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  main h2 {
+    text-align: center;
+  }
+}
+@media (min-width: 1025px) {
+  main h2 {
+    text-align: center;
+  }
+}
 main .blocksteps {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-left: 0px;
+}
+@media (min-width: 1025px) {
+  main .blocksteps {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 }
 main .step {
   display: flex;
@@ -353,6 +636,18 @@ main .step {
   width: 80%;
   height: 50px;
   margin-bottom: 20px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  main .step {
+    width: 40%;
+  }
+}
+@media (min-width: 1025px) {
+  main .step {
+    width: 25%;
+    margin-left: 50px;
+    margin-bottom: 40px;
+  }
 }
 main .step:hover {
   background: #e4d5f6;
@@ -389,14 +684,40 @@ main .restaurant {
   background-color: #F5F5F5;
   padding-top: 15px;
 }
-main .restaurant-card {
+main .restaurant-resto {
   display: flex;
   flex-direction: column;
   align-items: initial;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  main .restaurant-resto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media (min-width: 1025px) {
+  main .restaurant-resto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 15px;
+  }
+}
+main .restaurant-card {
   text-decoration: none;
   color: black;
   margin-bottom: 30px;
   height: 255px;
+  position: relative;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  main .restaurant-card {
+    width: 40%;
+    position: relative;
+  }
 }
 main .restaurant-card_image {
   border-top-left-radius: 20px;

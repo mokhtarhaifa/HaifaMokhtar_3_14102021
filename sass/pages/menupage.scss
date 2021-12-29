@@ -4,24 +4,41 @@
 .header-menu{
     @include flexprprety(row,center);
         margin-top:5px;
-        justify-content:space-evenly;
+        width:80%;
+        margin-left: 20px;
+        justify-content: center;
         h1{
             @extend .fonttitle;
             margin: 0;
-            margin-right: 40px;
+            @media (min-width: 768px) and (max-width: 1024px){
+                margin-right:150px;
+            }
+            @media (min-width: 1025px){
+                margin-right:250px;
+            }
         }
         a{
             color: black;
         }
         .fas{
-            margin-left: -45px;
+            padding-right:70px;
+            @media (min-width: 768px) and (max-width: 1024px){
+                margin-right:200px;
+            }
+            @media (min-width: 1025px){
+                margin-right:300px;
+            }
         }
+       
     }  
 /*main pg menu*/
 .menu{
     &-img{
         object-fit: fill;
         width: $larger;
+        @media (min-width: 1025px){
+            height: 600px;
+        }
     }
     &-card{
         @include flexprprety(column,initial);
@@ -30,11 +47,24 @@
         margin-top: -50px;
         border-top-left-radius: 50px;
         border-top-right-radius: 50px;
-    
+        @media (min-width: 768px) and (max-width: 1024px){
+            margin-top: -120px;
+            border-top-left-radius: 80px;
+            border-top-right-radius: 80px;
+        }
+        @media (min-width: 1025px){
+            margin-top: -200px;
+            border-top-left-radius: 60px;
+            border-top-right-radius: 60px;
+            padding:40px;
+        }
         &_title{
             @include flexprprety(row,center);
             justify-content: space-between;
             margin-top: 35px;
+            @media (min-width: 768px) and (max-width: 1024px){
+                justify-content: center;
+            }
             h2{
                 @extend .fonttitle;
                 margin:0;
@@ -44,65 +74,98 @@
                 padding-right: 25px;
             }
         }
-        &_plats{
-            
-            &categorie{
+        &_proposition{
+            @media (min-width: 1025px){
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
+            &entry{
                 
-                &_text{
-                    margin-top: 35px;
-                    .testspan{
-                        border-bottom: 3px solid map-get($color, Tertiaire);
-                    }
+                @media (min-width: 768px) and (max-width: 1024px){
+                    @include flexprprety(column,center);
                 }
-                &_block{
-                    @include flexprprety(row,space-between);
-                    @include btn(15px,0px,map-get($color,noir),$colorgray,16px,bold);
-                    @include size($larger,auto);
-                    line-height: 22px;
-                    margin-bottom: 15px;
-                    background-color: #fff;
-                    opacity: 0;
-                    animation: apparition 800ms forwards linear;
-                    
-                    :active + .checkpart {
-                        animation: checkmenu 1s forwards ease-out;
-                        & .fa-check-circle{
-                            transform: rotate(360deg);
-                        }
-                    }
-                    
-                    .platname{
-                        width: $larger;
-                        padding: 10px;
-                    }
-                    
-                    .test{
-                        margin: 0;
-                    }
-                    .testp{
-                        margin: 0;
-                        font-weight: normal;
-                        font-size: 14px;
-                        span{
-                            float: right;
-                            font-weight: bold;
-                            float: right;
-                        }
-                    }
-                    .checkpart{
-                        background-color: map-get($color,Tertiaire );
-                        text-align: center;
-                        border-top-right-radius: 15px;
-                        border-bottom-right-radius: 15px;
+                .testspan{
+                    border-bottom: 3px solid map-get($color, Tertiaire);
+                }
+                 
+                    .block{
+                        @include btn(15px,0px,map-get($color,noir),$colorgray,16px,bold);
+                        @include size($larger,auto);
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        animation: apparition 1s forwards linear;
+                        margin-top: 15px;
+                        text-decoration: none;
                         opacity: 0;
-                        .checked{
-                            margin-top: 25px;
-                            color: white;
-                            transition: transform 1s;
+                        @media (min-width: 768px) and (max-width: 1024px){
+                            width: 80%;
                         }
+                        @media (min-width: 1025px){
+                            width: 95%;
+                           margin-left: 10px;
+                        }
+                        :active + .check {
+                            animation: checkmenu 1s forwards ease-out;
+                            & .fa-check-circle{
+                                transform: rotate(360deg);
+                            }
+                        }
+                        @media (min-width: 1025px){
+                            :hover+ .check {
+                                animation: checkmenu 1s forwards ease-out;
+                                & .fa-check-circle{
+                                    transform: rotate(360deg);
+                                }
+                            }
+                        }
+                        .carte{
+                            display: flex;
+                            flex-direction: row;
+                            padding:10px;
+                            align-items: flex-end;
+                            width: 95%;
+                            justify-content: space-between;
+                            .platdetails{
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                width:80%;
+                                .cartetitle{
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                }
+                                .cartedescirption{
+                                    font-weight: lighter;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                }
+                                .prix{
+                                   transition: transform 1s;
+                                }
+                            }
+                        }
+                        
+                        .check{
+                            background-color: map-get($color,Tertiaire );
+                            border-top-right-radius: 15px;
+                            border-bottom-right-radius: 15px;
+                            text-align: center;
+                            margin-left: 5px;
+                            opacity: 0;
+                            .checked{
+                                margin-top: 20px;
+                                color: white;
+                                transition: transform 1s;
+                            }
+                        }  
                     }
-                     
-                }
+                    
+                
+                
                 .entre{
                     animation-delay:200ms;
                 }
@@ -112,14 +175,13 @@
                 .dessert{
                     animation-delay:600ms;
                 }
+                
             }
         }
         &_btncommander{
             margin-top: 40px;
             margin-bottom: 30px;
             @extend .textcenter;
-            width: 150px;
-            padding-left: 27%;
             &_button{
                 @include btn(30px,10px 40px ,#fff,linear-gradient((map-get($color,Secondaire)), (map-get($color,Primaire))),15px,normal);
             &:hover{
@@ -129,8 +191,7 @@
         }
     }
 }
-    
-/** Animation page menu**/
+ /** Animation page menu**/
 @keyframes apparition {
     from {
         opacity: 0;
@@ -152,4 +213,154 @@
         width: 20%;
     }
     
-}
+}  
+
+/******  test carte menu  ****
+.divmenus{
+    
+    
+    a{  
+        
+        text-decoration: none;
+        .lienvers{
+            @include btn(15px,0px,map-get($color,noir),$colorgray,16px,bold);
+            @include size($larger,auto);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            :hover + .checkkk {
+                animation: checkmenu 1s forwards ease-out;
+                & .fa-check-circle{
+                    transform: rotate(360deg);
+                }
+            }  
+        }
+        .carte{
+            display: flex;
+            flex-direction: row;
+            padding:10px;
+            align-items: flex-end;
+            width: 95%;
+            justify-content: space-between;
+        }
+        .textt{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width:80%;
+            .cartetitle{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .cartedescirption{
+                font-weight: lighter;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .carteprice{
+               transition: transform 1s;
+            }
+        }
+        .checkkk{
+            background-color: map-get($color,Tertiaire );
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            text-align: center;
+            margin-left: 5px;
+            opacity: 0;
+            .checked{
+                margin-top: 20px;
+                color: white;
+                transition: transform 1s;
+            }
+        }
+    }
+    
+}*/
+
+
+
+
+/*&_block{
+                    @include flexprprety(row,space-between);
+                    @include btn(15px,0px,map-get($color,noir),$colorgray,16px,bold);
+                    @include size($larger,auto);
+                    line-height: 22px;
+                    margin-bottom: 15px;
+                    background-color: #fff;
+                    opacity: 0;
+                    animation: apparition 800ms forwards linear;
+                    @media (min-width: 768px) and (max-width: 1024px){
+                        width: 90%;
+                    }
+                    @media (min-width: 1025px){
+                        width: 40%;
+                        margin-left: 20px;
+                    }
+                    :active + .checkpart {
+                        animation: checkmenu 1s forwards ease-out;
+                        & .fa-check-circle{
+                            transform: rotate(360deg);
+                        }
+                        
+                    }
+                    @media (min-width: 1025px){
+                        :hover + .checkpart {
+                            animation: checkmenu 1s forwards ease-out;
+                            & .fa-check-circle{
+                                transform: rotate(360deg);
+                            }
+                        }
+                    }
+                    .platname{
+                        width: $larger;
+                        padding: 10px;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        background-color: red;
+                    }
+                    
+                    .test{
+                        margin: 0;
+                    }
+                    .testp{
+                        margin: 0;
+                        font-weight: normal;
+                        font-size: 14px;
+                        span{
+                            float: right;
+                            font-weight: bold;
+                            float: right;
+                            
+                        }
+                    }
+                    .checkpart{
+                        background-color: map-get($color,Tertiaire );
+                        text-align: center;
+                        border-top-right-radius: 15px;
+                        border-bottom-right-radius: 15px;
+                        opacity: 0;
+                        .checked{
+                            margin-top: 25px;
+                            color: white;
+                            transition: transform 1s;
+                        }
+                    }
+                     
+                }
+
+                .lotfi{
+                    @media (min-width: 1025px){
+                        display: flex;
+                        flex-direction: row;
+                    }
+                    @media (min-width: 768px) and (max-width: 1024px){
+                        display: flex;
+                        flex-direction: column;
+                        width: 60%;
+                        justify-content: center;
+                    }
+                }*/
