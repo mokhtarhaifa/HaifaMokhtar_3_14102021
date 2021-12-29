@@ -65,6 +65,9 @@
             @media (min-width: 768px) and (max-width: 1024px){
                 justify-content: center;
             }
+            @media (min-width: 1025px){
+                margin-top: 15px;
+            }
             h2{
                 @extend .fonttitle;
                 margin:0;
@@ -76,19 +79,24 @@
         }
         &_proposition{
             @media (min-width: 1025px){
-                display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
+                @include flexprprety(row,initial);
+                flex-wrap: wrap;
+                margin-top: 20px;
+                width: 100%;
+                justify-content: space-between;
             }
+
             &entry{
-                
+                margin-top: 30px;
                 @media (min-width: 768px) and (max-width: 1024px){
                     @include flexprprety(column,center);
                 }
+                
                 .testspan{
                     border-bottom: 3px solid map-get($color, Tertiaire);
                 }
-                 
+                
+                
                     .block{
                         @include btn(15px,0px,map-get($color,noir),$colorgray,16px,bold);
                         @include size($larger,auto);
@@ -99,12 +107,12 @@
                         margin-top: 15px;
                         text-decoration: none;
                         opacity: 0;
+                        
                         @media (min-width: 768px) and (max-width: 1024px){
                             width: 80%;
                         }
                         @media (min-width: 1025px){
-                            width: 95%;
-                           margin-left: 10px;
+                            width: 100%;  
                         }
                         :active + .check {
                             animation: checkmenu 1s forwards ease-out;
@@ -125,8 +133,12 @@
                             flex-direction: row;
                             padding:10px;
                             align-items: flex-end;
-                            width: 95%;
+                            
+                            width: 100%;
                             justify-content: space-between;
+                            @media (min-width: 1025px){
+                                width: 400px;
+                            }
                             .platdetails{
                                 display: flex;
                                 flex-direction: column;
@@ -142,9 +154,6 @@
                                     white-space: nowrap;
                                     overflow: hidden;
                                     text-overflow: ellipsis;
-                                }
-                                .prix{
-                                   transition: transform 1s;
                                 }
                             }
                         }

@@ -142,6 +142,11 @@ footer .footer_icon {
     justify-content: center;
   }
 }
+@media (min-width: 1025px) {
+  .menu-card_title {
+    margin-top: 15px;
+  }
+}
 .menu-card_title h2 {
   margin: 0;
   padding-right: 35px;
@@ -153,8 +158,15 @@ footer .footer_icon {
   .menu-card_proposition {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    align-items: initial;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    width: 100%;
+    justify-content: space-between;
   }
+}
+.menu-card_propositionentry {
+  margin-top: 30px;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .menu-card_propositionentry {
@@ -193,8 +205,7 @@ footer .footer_icon {
 }
 @media (min-width: 1025px) {
   .menu-card_propositionentry .block {
-    width: 95%;
-    margin-left: 10px;
+    width: 100%;
   }
 }
 .menu-card_propositionentry .block :active + .check {
@@ -216,8 +227,13 @@ footer .footer_icon {
   flex-direction: row;
   padding: 10px;
   align-items: flex-end;
-  width: 95%;
+  width: 100%;
   justify-content: space-between;
+}
+@media (min-width: 1025px) {
+  .menu-card_propositionentry .block .carte {
+    width: 400px;
+  }
 }
 .menu-card_propositionentry .block .carte .platdetails {
   display: flex;
@@ -235,9 +251,6 @@ footer .footer_icon {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-.menu-card_propositionentry .block .carte .platdetails .prix {
-  transition: transform 1s;
 }
 .menu-card_propositionentry .block .check {
   background-color: #99E2D0;
