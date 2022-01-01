@@ -1,5 +1,7 @@
+/*import fichier*/
 @import "./utils/mixin.scss";
 @import "./utils/variables.scss";
+@import "./layout/headerpages.scss";
 @import "./layout/footer.scss";
 @import "./pages/menupage.scss";
 @import "./pages/loaderspinner.scss";
@@ -23,6 +25,7 @@
     height: auto;
     border-radius: 20px;
 }
+
 /**container**/
 body{
     margin: auto;
@@ -72,9 +75,10 @@ body{
         &button{
             @include btn(30px,20px,#fff,linear-gradient((map-get($color,Secondaire)),(map-get($color,Primaire))),17px,bold);
             margin-top: 15px;
+            
         }
         a:hover{
-            opacity: 0.8;
+            @include buttoneffect;
         }
     }
 }
@@ -201,17 +205,25 @@ main{
                 padding:12px 20px;
                 @include flexprprety(row,initial);
                 justify-content: space-between;
+                
             }
+            
         } 
     }
 }
-.fa-heart:hover{
-        font-weight: 900;
-        background: linear-gradient(to top, (map-get($color,Secondaire)), (map-get($color,Primaire)));
-        background-clip:text;
-        -webkit-background-clip:text;
-        color:transparent;
+.fa-heart{
+    &:active{
+        @include heartbackground;
     }
+}
+@media (min-width: 1025px){
+    .fa-heart{
+        &:hover{
+            @include heartbackground;
+        }
+    }
+}
+
 
 
 

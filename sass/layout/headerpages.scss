@@ -1,0 +1,31 @@
+/*--header--*/
+.header-menu{
+    @include flexprprety(row,center);
+        margin-top:5px;
+        width:80%;
+        margin-left: 20px;
+        justify-content: center;
+        h1{
+            @extend .fonttitle;
+            margin: 0;
+            @media (min-width: 768px) and (max-width: 1024px){
+                margin-right:150px;
+            }
+            @media (min-width: 1025px){
+                margin-right:250px;
+            }
+        }
+        a{
+            color: black;
+        }
+        .fas{
+            padding-right:70px;
+            @media (min-width: 768px) and (max-width: 1024px){
+                margin-right:200px;
+            }
+            @media (min-width: 1025px){
+                margin-right:300px;
+            }
+        }
+       
+} 

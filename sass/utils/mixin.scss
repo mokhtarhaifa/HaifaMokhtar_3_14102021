@@ -24,3 +24,15 @@
     height: $hauteur;
     
 }
+@mixin heartbackground{
+    font-weight: 900;
+    background: linear-gradient(to top, (map-get($color,Secondaire)), (map-get($color,Primaire)));
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
+    transition: all 1s ease-in-out;
+}
+@mixin buttoneffect {
+    opacity:0.8;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
