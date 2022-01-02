@@ -1,5 +1,5 @@
 /**loading**/
-.loading{
+/*.loading{
     background-color:darken($colorgray,80);
     top: 0;
     bottom: 0;
@@ -44,23 +44,13 @@
         opacity: 0;
         transform: translateX(-9999px);
     }
-}
-/*.testload{
-   background-color:darken($colorgray,80);
+}*/
+.testload{
+    background-color:darken($colorgray,80);
+    opacity:0.9;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    position: fixed;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    animation: testdisp 0s 4s both;
-    .test1{
-        .txt{
-            @include fonttitle;
-        }
-    }
-}*/
+
+}

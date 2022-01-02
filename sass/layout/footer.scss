@@ -1,6 +1,8 @@
 footer{
     background-color:darken($colorgray,80);
     @include flexprprety(column,initial);
+    position: absolute;
+    width: 100%;
     bottom: 0;
     @media (min-width: 768px) and (max-width: 1024px){
         text-align: center;
