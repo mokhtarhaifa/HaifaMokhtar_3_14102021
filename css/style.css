@@ -326,7 +326,7 @@ footer .footer_icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: backgroundloading 0s 2.3s both;
+  animation: backgroundloading 0s 2.8s both;
 }
 .testload .textload {
   font-size: 30px;
@@ -336,28 +336,31 @@ footer .footer_icon {
   color: transparent;
   padding: 17px;
   position: relative;
+  border-radius: 10px;
 }
 .testload .textload::before {
   content: "";
   position: absolute;
   background: transparent;
   border: 3px solid transparent;
+  border-radius: 10px;
   width: 100%;
   height: 100%;
   top: -4px;
   left: -3px;
-  animation: loader 1.5s 500ms linear;
+  animation: loader 2s 300ms linear;
 }
 .testload .textload::after {
   content: "";
   position: absolute;
   background: transparent;
   border: 3px solid transparent;
+  border-radius: 10px;
   width: 100%;
   height: 100%;
   top: -4px;
   left: -3px;
-  animation: loader2 1.5s 500ms linear;
+  animation: loader2 2s 300ms linear;
 }
 
 @keyframes loader {
@@ -368,6 +371,7 @@ footer .footer_icon {
     border-bottom-color: transparent;
     border-left-color: transparent;
     border-right-color: transparent;
+    border-radius: 10px;
   }
   50% {
     width: 100%;
@@ -394,6 +398,7 @@ footer .footer_icon {
     border-bottom-color: transparent;
     border-left-color: transparent;
     border-right-color: transparent;
+    border-radius: 10px;
   }
   50% {
     width: 0%;

@@ -96,12 +96,16 @@
                                 transform: rotate(360deg);
                             }
                         }
+                        
                         @media (min-width: 1025px){
                             :hover+ .check {
                                 animation: checkmenu 1s forwards ease-out;
                                 & .fa-check-circle{
                                     transform: rotate(360deg);
                                 }
+                            }
+                            :not(:hover){
+                                
                             }
                         }
                         .carte{
